@@ -1,15 +1,14 @@
 {
-    "name": "Macaulay2 Codespace",
-    "build": {
-      "dockerfile": "Dockerfile"
-    },
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "yourusername.macaulay2"  // Replace with the correct Macaulay2 extension ID
-        ]
-      }
-    },
-    "remoteUser": "vscode"
-  }
-  
+  "name": "Macaulay2 Codespace",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {},
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yourusername.macaulay2"  // Replace with the correct Macaulay2 extension ID
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
