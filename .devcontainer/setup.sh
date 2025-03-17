@@ -25,8 +25,9 @@ else
     exit 1
 fi
 
-# Debugging: Ensure the script continues beyond Macaulay2 check
+# **FORCE CONTINUATION: Ensure script does not stop here**
 echo "=== Passed Macaulay2 check. Proceeding to VS Code extension installation... ==="
+sleep 5  # Short delay to ensure the script does not exit early
 
 # Debugging: Check if VS Code CLI is available
 echo "Checking if VS Code CLI (code) is available..."
