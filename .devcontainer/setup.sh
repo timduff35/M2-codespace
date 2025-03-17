@@ -18,29 +18,32 @@ sudo apt install -y macaulay2
 
 echo "Verifying Macaulay2 installation..."
 if command -v M2 &>/dev/null; then
-    echo "Macaulay2 installed successfully!"
+    echo "✅ Macaulay2 installed successfully!"
     M2 --version
 else
-    echo "ERROR: Macaulay2 installation failed!"
+    echo "❌ ERROR: Macaulay2 installation failed!"
     exit 1
 fi
 
-# Debugging: Check if VS Code is installed
+# Debugging: Ensure the script continues beyond Macaulay2 check
+echo "=== Passed Macaulay2 check. Proceeding to VS Code extension installation... ==="
+
+# Debugging: Check if VS Code CLI is available
 echo "Checking if VS Code CLI (code) is available..."
 if command -v code &>/dev/null; then
-    echo "VS Code CLI found!"
+    echo "✅ VS Code CLI found!"
 else
-    echo "ERROR: VS Code CLI (code) not found. Extension installation will fail!"
+    echo "❌ ERROR: VS Code CLI (code) not found. Extension installation will fail!"
     exit 1
 fi
 
 # Install VS Code extensions
 echo "Installing Macaulay2 VS Code extension..."
-code --install-extension coreysharris.macaulay2 || echo "WARNING: Extension install failed, continuing..."
+code --install-extension coreysharris.macaulay2 || echo "⚠️ WARNING: Extension install failed, continuing..."
 
 # Debugging: Verify installed extensions
 echo "Checking installed VS Code extensions..."
-code --list-extensions | grep "coreysharris.macaulay2" && echo "Macaulay2 extension installed!" || echo "WARNING: Macaulay2 extension NOT installed!"
+code --list-extensions | grep "coreysharris.macaulay2" && echo "✅ Macaulay2 extension installed!" || echo "⚠️ WARNING: Macaulay2 extension NOT installed!"
 
 # Set Macaulay2 executable path in VS Code settings
 echo "Configuring Macaulay2 extension..."
