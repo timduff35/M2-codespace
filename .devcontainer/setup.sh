@@ -7,7 +7,7 @@ echo "Updating package lists..."
 sudo apt update
 
 echo "Installing dependencies..."
-sudo apt install -y software-properties-common
+sudo apt install -y software-properties-common curl
 
 echo "Adding Macaulay2 PPA..."
 sudo add-apt-repository -y ppa:macaulay2/macaulay2
@@ -25,20 +25,28 @@ else
     exit 1
 fi
 
-# **FORCE CONTINUATION: Ensure script does not stop here**
-echo "=== Passed Macaulay2 check. Proceeding to VS Code extension installation... ==="
-sleep 5  # Short delay to ensure the script does not exit early
+echo "=== Passed Macaulay2 check. Installing VS Code CLI... ==="
 
-# Debugging: Check if VS Code CLI is available
-echo "Checking if VS Code CLI (code) is available..."
+# **Ensure VS Code CLI (`code`) is Installed**
+if ! command -v code &>/dev/null; then
+    echo "⚠️ VS Code CLI not found. Installing..."
+    curl -fsSL https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64 -o vscode-cli.tar.gz
+    mkdir -p /usr/local/vscode-cli
+    tar -xzf vscode-cli.tar.gz -C /usr/local/vscode-cli
+    ln -s /usr/local/vscode-cli/bin/code /usr/local/bin/code
+    rm vscode-cli.tar.gz
+    echo "✅ VS Code CLI installed!"
+fi
+
+# **Double-check if `code` is available**
 if command -v code &>/dev/null; then
-    echo "✅ VS Code CLI found!"
+    echo "✅ VS Code CLI is available!"
 else
-    echo "❌ ERROR: VS Code CLI (code) not found. Extension installation will fail!"
+    echo "❌ ERROR: VS Code CLI installation failed!"
     exit 1
 fi
 
-# Install VS Code extensions
+# Install VS Code extension
 echo "Installing Macaulay2 VS Code extension..."
 code --install-extension coreysharris.macaulay2 || echo "⚠️ WARNING: Extension install failed, continuing..."
 
