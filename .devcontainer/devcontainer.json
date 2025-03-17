@@ -6,7 +6,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "yourusername.macaulay2"  // Replace with the correct Macaulay2 extension ID
+        "coreysharris.macaulay2"  // Replace with the correct Macaulay2 extension ID
       ]
     }
   },
