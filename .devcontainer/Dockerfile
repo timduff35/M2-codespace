@@ -1,7 +1,6 @@
-# Use Ubuntu as base image
-FROM ubuntu:latest
+# Use Ubuntu 22.04 instead of latest
+FROM ubuntu:22.04
 
-# Set non-interactive mode to avoid prompts during installation
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install necessary dependencies
@@ -18,5 +17,5 @@ SHELL ["/bin/bash", "-c"]
 # Verify installation
 RUN M2 --version
 
-# Set the default user (vscode is the default user for Codespaces)
+# Set the default user
 USER vscode
