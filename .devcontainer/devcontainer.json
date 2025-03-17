@@ -6,8 +6,11 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "coreysharris.macaulay2"  // Replace with the correct Macaulay2 extension ID
-      ]
+        "coreysharris.macaulay2"
+      ],
+      "settings": {
+        "macaulay2.executablePath": "/usr/bin/M2"
+      }
     }
   },
   "remoteUser": "vscode"
