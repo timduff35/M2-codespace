@@ -1,16 +1,12 @@
 {
   "name": "Macaulay2 Codespace",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {},
-  "postStartCommand": "bash .devcontainer/setup.sh",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
   "customizations": {
     "vscode": {
       "extensions": [
         "coreysharris.macaulay2"
-      ],
-      "settings": {
-        "macaulay2.executablePath": "/usr/bin/M2"
-      }
+      ]
     }
   },
   "remoteUser": "vscode"
