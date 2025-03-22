@@ -1,10 +1,12 @@
 {
   "name": "Macaulay2 Codespace",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "postCreateCommand": "bash .devcontainer/setup.sh && code --install-extension .devcontainer/macaulay2-codespace-0.0.4.vsix",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
   "customizations": {
     "vscode": {
-      "extensions": []
+      "extensions": [
+        "./.devcontainer/macaulay2-codespace-0.0.4.vsix"
+      ]
     }
   },
   "remoteUser": "vscode"
