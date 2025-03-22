@@ -24,6 +24,6 @@ else
     exit 1
 fi
 
-echo "=== Passed Macaulay2 check. Installing VS Code CLI... ==="
+
 
 echo "========== SETUP COMPLETE =========="
