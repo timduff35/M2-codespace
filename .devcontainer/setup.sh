@@ -16,6 +16,16 @@ sudo apt update
 echo "Installing Macaulay2..."
 sudo apt install -y macaulay2
 
+echo "Creating symlink to /usr/local/bin/M2..."
+M2_PATH=$(command -v M2)
+if [ "$M2_PATH" != "/usr/local/bin/M2" ]; then
+    sudo ln -sf "$M2_PATH" /usr/local/bin/M2
+    echo "Symlink created: /usr/local/bin/M2 → $M2_PATH"
+else
+    echo "M2 is already in /usr/local/bin"
+fi
+
+
 echo "Verifying Macaulay2 installation..."
 if command -v M2 &>/dev/null; then
     echo "✅ Macaulay2 installed successfully!"
