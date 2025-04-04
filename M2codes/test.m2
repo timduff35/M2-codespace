@@ -201,4 +201,4 @@ L=linearlyReductiveAction(I,G,R)
 elapsedTime H=hilbertIdeal(L)
 elapsedTime invariants(L,1)
 elapsedTime invariants(L,2)
-elapsedTime invariants(L,3)
+elapsedTime invariants(L,3) -- This line crashes
