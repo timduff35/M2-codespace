@@ -15,8 +15,10 @@ If you see an error like “Cannot find Macaulay2 executable”, it's likely cau
 
 - To confirm this executable path error
 - Go to the extension settings as shown in the image below:
-![alt text](image.png)
-![alt text](image-1.png)
+![alt text](image_files/image.png)
+![alt text](image_files/image-1.png)
+
+- If your path is different than what it shows in the image above try the step below:
 
 👉 To fix this, **turn off Settings Sync** in VS Code:
 
@@ -27,6 +29,7 @@ If you see an error like “Cannot find Macaulay2 executable”, it's likely cau
   ```
 
 - Confirm when prompted.
+- Reload the window if necessary.
 
 3. **Check the Codespace creation log** to confirm Macaulay2 was installed correctly:
 - Open the Command Palette (`Cmd/Ctrl + Shift + P`)
