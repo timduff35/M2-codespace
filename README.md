@@ -14,9 +14,9 @@ Codespace setup for Macaulay2 (M2)
 If you see an error like “Cannot find Macaulay2 executable”, it's likely caused by conflicting user settings.
 
 - To confirm this executable path error
-- run the manual check script:
-```bash
-bash .devcontainer/check_m2_path.sh
+- Go to the extension settings as shown in the image below:
+![alt text](image.png)
+![alt text](image-1.png)
 
 👉 To fix this, **turn off Settings Sync** in VS Code:
 
