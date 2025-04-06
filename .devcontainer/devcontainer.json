@@ -7,12 +7,7 @@
     "vscode": {
       "extensions": [
         "intisar.macaulay2-codespace"
-      ],
-      "settings": {
-        "files.exclude": {
-          "**/.vscode": false
-        }
-      }
+      ]
     }
   }
 }
