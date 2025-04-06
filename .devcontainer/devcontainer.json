@@ -1,7 +1,7 @@
 {
   "name": "Macaulay2 Codespace",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "onCreateCommand": "bash .devcontainer/setup.sh",
   "remoteUser": "vscode",
   "customizations": {
     "vscode": {
