@@ -2,12 +2,15 @@
   "name": "Macaulay2 Codespace",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "postCreateCommand": "bash .devcontainer/setup.sh",
+  "remoteUser": "vscode",
   "customizations": {
     "vscode": {
       "extensions": [
         "intisar.macaulay2-codespace"
-      ]
+      ],
+      "settings": {
+        "macaulay2.executablePath": "/usr/bin/M2"
+      }
     }
-  },
-  "remoteUser": "vscode"
+  }
 }
