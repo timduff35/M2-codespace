@@ -17,3 +17,5 @@ echo "postfix postfix/mailname string localhost" | sudo debconf-set-selections
 sudo add-apt-repository -y ppa:macaulay2/macaulay2
 sudo apt -y update
 sudo DEBIAN_FRONTEND=noninteractive apt install -y macaulay2 
+
+echo "alias m2='M2'" >> ~/.bashrc
